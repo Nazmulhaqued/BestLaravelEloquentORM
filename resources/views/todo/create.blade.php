@@ -6,7 +6,7 @@
 <a href="/BitfumesWebnologies/todo" class="btn btn-info">Back</a>
 <div class="col-lg-4 col-lg-offset-4">
 	<h1>Create New Item</h1>
-<form class="form-horizontal" action="/BitfumesWebnologies/todo" method="post">
+<form class="form-horizontal" action="/BitfumesWebnologies/todo" enctype="multipart/form-data" method="post">
 	{{csrf_field()}}
   <fieldset>
  
@@ -14,6 +14,11 @@
   
       <div class="col-lg-10">
         <input type="text" class="form-control" name="title" placeholder="Title">
+        <br/>
+      </div>
+
+      <div class="col-lg-10">
+        <input type="file" class="form-control" name="image" placeholder="image">
         <br/>
       </div>
 

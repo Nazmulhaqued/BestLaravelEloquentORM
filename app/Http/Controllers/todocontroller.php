@@ -42,6 +42,13 @@ class todocontroller extends Controller
        $todo = new todo;
        $todo->body = $request->body;
        $todo->title = $request->title;
+       $productImage = $request->file('image');
+       $imageName = $productImage->getClientOriginalName();
+       $uploadPath = 'public/NzImage/';
+       $productImage->move($uploadPath,$imageName);
+       $imageUrl = $uploadPath.$imageName;
+       $todo->image = $imageUrl;
+
        $todo->save();
        return redirect('todo');
     }
