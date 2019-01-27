@@ -20,3 +20,7 @@ Route::get('/file',function(){
 Route::get('/about',function(){
 	return view('about');
 });
+
+Route::post('send','mailController@send');
+
+Route::get('send-advance','mailController@sendAdvance');
